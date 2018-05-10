@@ -11937,9 +11937,9 @@ MathJax.Hub.Config({
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Energibidraget $\varepsilon_\text{xc}^\text{HEG}$ är känt för homogena elektrongaser, HEG, där elektrontätheten är konstant i rummet. Under detta antagande kan $E_\text{xc}$ approximativt skrivas som</p>
 <p>$$\begin{equation*}
-    E_\text{xc} \approx \int n(\vec{r}) \varepsilon_\text{xc}^\text{HEG}(\vec{r}, n(\vec{r})) dV
+    E_\text{xc} \approx \int n(\vec{r}) \varepsilon_\text{xc}^\text{HEG}(\vec{r}, n(\vec{r})) dV,
 \end{equation*}$$</p>
-<p>Efter evaluering av funktionalderivatan erhålles exchange-korrelationpotentialen:</p>
+<p>vilket kallas för den \emph{lokala täthetsapproximationen}, LDA. Efter evaluering av funktionalderivatan erhålles exchange-korrelationpotentialen:</p>
 <p>$$\begin{equation*}
     V_\text{xc} = \frac{\delta E_\text{xc}[n]}{\delta n} = \varepsilon_\text{xc}^\text{HEG} + n \frac{\text{d}}{\text{d}n} \varepsilon_\text{xc}^\text{HEG}.
 \end{equation*}$$</p>
@@ -11962,7 +11962,7 @@ MathJax.Hub.Config({
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$$\begin{equation}
     \label{eqn:Vosko}
-    \varepsilon_\text{c}^\text{HEG} \approx \frac{A}{2} \left\{  \log\left(\frac{y^2}{Y(y)}\right) + \frac{2b}{Q} \arctan\left(\frac{Q}{2y + b}\right) \right. \\ \left. -  \frac{b y_0}{Y(y_0)} \left[ \log\left(\frac{(y - y_0)^2}{Y(y)}\right) + \frac{2(b + 2 y_0)}{Q} \arctan\left(\frac{Q}{2y + b}\right) \right]\right\}
+    \varepsilon_\text{c}^\text{HEG} \approx \frac{A}{2} \left\{  \log\left(\frac{y^2}{Y(y)}\right) + \frac{2b}{Q} \arctan\left(\frac{Q}{2y + b}\right) \right. \\ \left. -  \frac{b y_0}{Y(y_0)} \left[ \log\left(\frac{(y - y_0)^2}{Y(y)}\right) + \frac{2(b + 2 y_0)}{Q} \arctan\left(\frac{Q}{2y + b}\right) \right]\right\},
 \end{equation}$$</p>
 
 </div>
@@ -11972,7 +11972,27 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Att approximera ett material som en homogen elektrongas på detta sätt kallas LDA, och är det enklaste sättet att beräkna exchange-korrelation. Metoden kan generaliseras genom att låta exchange-korrelationpotentialen bero på icke-lokal elektontäthet, vilket gör det möjligt att inkludera krafter som exempelvis van der Waals-växelverkan. Dessa förbättringar har bland annat lett fram till metoden vdW-DF, van der Waals Density Functional.</p>
+<p>vars derivata beräknas till</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\begin{equation}
+\frac{\text{d}}{\text{d}n}\varepsilon_\text{c}^\text{HEG}\approx\frac{a}{2} \left(- \frac{b y_{0}}{b y_{0} + c + y_{0}^{2}} \left(\frac{1}{\left(- y_{0} + \frac{2^{\frac{2}{3}} \sqrt[6]{3} \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}}\right)^{2}} \left(\frac{\left(- y_{0} + \frac{2^{\frac{2}{3}} \sqrt[6]{3} \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}}\right)^{2} \left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{12 \sqrt[6]{\pi} N} + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{6 \sqrt[3]{\pi} N}\right)}{\left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}} + c + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{2 \sqrt[3]{\pi}}\right)^{2}} - \frac{2^{\frac{2}{3}} \sqrt[6]{3} \left(- y_{0} + \frac{2^{\frac{2}{3}} \sqrt[6]{3} \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}}\right) \sqrt[6]{\frac{1}{N}}}{6 \sqrt[6]{\pi} N \left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}} + c + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{2 \sqrt[3]{\pi}}\right)}\right) \left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}} + c + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{2 \sqrt[3]{\pi}}\right) + \frac{2^{\frac{2}{3}} \sqrt[6]{3} \left(4 b y_{0} + 2 b + 4 c + 4 y_{0}^{2}\right) \sqrt[6]{\frac{1}{N}}}{6 \sqrt[6]{\pi} N \left(1 + \frac{- b^{2} + 4 c}{\left(b + \frac{2^{\frac{2}{3}} \sqrt[6]{3}}{\sqrt[6]{\pi}} \sqrt[6]{\frac{1}{N}}\right)^{2}}\right) \left(b + \frac{2^{\frac{2}{3}} \sqrt[6]{3}}{\sqrt[6]{\pi}} \sqrt[6]{\frac{1}{N}}\right)^{2}}\right) + \frac{6^{\frac{2}{3}} \sqrt[3]{\pi}}{3 \sqrt[3]{\frac{1}{N}}} \left(\frac{\sqrt[3]{6} \left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{12 \sqrt[6]{\pi} N} + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{6 \sqrt[3]{\pi} N}\right) \sqrt[3]{\frac{1}{N}}}{2 \sqrt[3]{\pi} \left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}} + c + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{2 \sqrt[3]{\pi}}\right)^{2}} - \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{6 \sqrt[3]{\pi} N \left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}} + c + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{2 \sqrt[3]{\pi}}\right)}\right) \left(\frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{2 \sqrt[6]{\pi}} + c + \frac{\sqrt[3]{6} \sqrt[3]{\frac{1}{N}}}{2 \sqrt[3]{\pi}}\right) + \frac{2^{\frac{2}{3}} \sqrt[6]{3} b \sqrt[6]{\frac{1}{N}}}{3 \sqrt[6]{\pi} N \left(1 + \frac{- b^{2} + 4 c}{\left(b + \frac{2^{\frac{2}{3}} \sqrt[6]{3}}{\sqrt[6]{\pi}} \sqrt[6]{\frac{1}{N}}\right)^{2}}\right) \left(b + \frac{2^{\frac{2}{3}} \sqrt[6]{3}}{\sqrt[6]{\pi}} \sqrt[6]{\frac{1}{N}}\right)^{2}}\right).
+\end{equation}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Metoden kan generaliseras genom att låta exchange-korrelationpotentialen bero på icke-lokal elektontäthet, vilket gör det möjligt att inkludera krafter som exempelvis van der Waals-växelverkan. Dessa förbättringar har bland annat lett fram till metoden vdW-DF, van der Waals Density Functional.</p>
 
 </div>
 </div>
@@ -11996,7 +12016,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -12033,7 +12053,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_eps_x</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -12048,7 +12068,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_Deps_x_times_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -12072,7 +12092,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.0621814</span>
@@ -12107,7 +12127,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_Deps_c_Vosko</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
