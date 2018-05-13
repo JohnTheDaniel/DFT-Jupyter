@@ -11788,7 +11788,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Som nämnts är målet med täthetsfunktionalteori att hitta grundtillståndet till flerpartikelsystem. Kohn-Shams ekvation är ett egenvärdesproblem som minimerar energin i systemet.</p>
+<p>Som nämnts är målet med täthetsfunktionalteori att hitta grundtillståndet till ett flerpartikelsystem. Kohn-Shams ekvation är ett egenvärdesproblem som minimerar energin i systemet.</p>
 
 </div>
 </div>
@@ -11805,31 +11805,33 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Uttrycket för $E[n]$ beskriver totala energin för systemet, men är inte nödvändigtvis grundtillståndsenergin. Om systemets totala vågfunktion är $\Psi$ och systemets motsvarande grundtillstånd är $\Psi_0$, gäller det alltid att:</p>
+<p>Uttrycket för $E[n]$ beskriver den totala energin för systemet, men är inte nödvändigtvis grundtillståndsenergin. Om systemets totala vågfunktion är $\Psi$ och systemets motsvarande grundtillstånd är $\Psi_0$, gäller det alltid att:</p>
 <p>\begin{equation*}
     E = \langle\Psi|\hat{H}|\Psi\rangle \geq \langle\Psi_0|\hat{H}|\Psi_0\rangle = E_0,
 \end{equation*}</p>
-<p>där $E_0$ är grundtillståndsenergin och $\hat{H}$ är Hamiltonoperatorn. Detta kallas \emph{variationsprincipen}, och innebär att om $E$ minimeras med avseende på $n$ erhålls grundtillståndsenergin. Energin $E$ måste minimeras under villkoret att $\Psi$ är normerbar, dvs $\int n(\vec{r})d\vec{r} = N$ i enighet med ekvation (\ref{eq:int_density}). Dessutom måste totala antalet elektroner $N$ vara konstant.</p>
-<p>För att minimera funktionalen under villkoret $\int n(\vec{r}) dV = N$ används Lagrangemultiplikatorer. Målet är hitta extremvärdet till uttrycket</p>
+<p>där $E_0$ är grundtillståndsenergin och $\hat{H}$ är Hamiltonoperatorn. Detta kallas \emph{variationsprincipen}, och innebär att om $E$ minimeras med avseende på $n$ erhålls grundtillståndsenergin. Energin $E$ måste minimeras under villkoret att $\Psi$ är normerbar, dvs $\int n(\vec{r})dV = N$. Dessutom måste totala antalet elektroner $N$ vara konstant.</p>
+<p>För att minimera funktionalen under villkoret $\int n(\vec{r}) dV = N$ används \emph{Lagrangemultiplikatorer}. Målet är hitta extremvärdet till uttrycket</p>
 <p>\begin{equation*}
-    E[n] - \mu \int n(\vec{r}) d\vec{r},
+    E[n] - \mu \int n(\vec{r}) dV,
 \end{equation*}</p>
-<p>där $\mu$ är lagrangemultiplikatorn. Analogt med hur extremvärden till funktioner hittas med derivata, hittas extremvärden till funktionalen $E[n]$ med funktionalderivata:</p>
+<p>där $\mu$ är Lagrangemultiplikatorn. 
+Analogt med hur extremvärden till funktioner hittas med derivata, hittas extremvärden till funktionalen $E[n]$ med funktionalderivata:</p>
 <p>\begin{equation}
     \label{eq:extreme_functional_derivative_density}
-    \frac{\delta}{\delta n} \left( E[n] - \mu \int n(\vec{r}) d\vec{r}     \right) = 0.
+    \frac{\delta}{\delta n} \left( E[n] - \mu \int n(\vec{r}) dV     \right) = 0.
 \end{equation}</p>
-<p>Med ekvation (\ref{eq:density_from_orbitals}) och några konstanter $\varepsilon_i$ så att $\sum \varepsilon_i = \mu$ blir ekvation (\ref{eq:extreme_functional_derivative_density}):</p>
-<p>\begin{equation*}
-    \frac{\delta}{\delta n} \left( E[n] - \sum^N_{i = 1} \int \varepsilon_i |\psi_i|^2 d\vec{r} \right) = 0.
-\end{equation*}</p>
-<p>Det är möjligt att visa att lösningarna till denna ekvation ges av egenvärdesproblemet Kohn-Shams ekvation:</p>
-<p>\begin{equation*}
-    \label{eqn:kohnsham}
+<p>Med definitionen av <a href="electron-density.html">elektrontäthet</a> och en uppsättning konstanter $\varepsilon_i$ så att $\sum \varepsilon_i = \mu$ blir ekvation $\eqref{eq:extreme_functional_derivative_density}$:</p>
+<p>\begin{equation}
+    \label{eq:anpassade_konstanter}
+    \frac{\delta}{\delta n} \left( E[n] - \sum^N_{i = 1} \int \varepsilon_i |\psi_i|^2 dV \right) = 0.
+\end{equation}</p>
+<p>Det går att visa att lösningarna till denna ekvation ges av egenvärdesproblemet Kohn-Shams ekvation</p>
+<p>\begin{equation}
+    \label{eq:kohn}
     \left[-\frac{1}{2}\nabla^2 + V_\text{eff}(\vec{r}) \right] \psi_i(\vec{r}) = \varepsilon_i \psi_i(\vec{r}),
-\end{equation*}</p>
-<p>som är Schrödingers ekvation för varje elektronorbital \cite[s.~147-148]{Parr1989Density-functionalMolecules}. Här betecknar $V_\text{eff}$ en effektiva potentialen som partikeln upplever, som approximeras i avsnitt \ref{sec:teori:potential}. På detta sätt har problemet därmed reducerats till ett antal enpartikelproblem.</p>
-<p>Vid lösning av Kohn-Shams ekvation erhålls ett antal energiegenvärden $\varepsilon_i$, vardera med en tillhörande egenvektor. Egenvektorn med lägst tillhörande energiegenvärde ansätts som nya elektronorbitaler $\psi(i)$ i nästa iteration av beräkningsalgoritmen. På detta sätt minimeras energin successivt.</p>
+\end{equation}</p>
+<p>som är Schrödingers ekvation för varje elektronorbital. Här betecknar $V_\text{eff}$ den <a href="energibidrag.html">effektiva potentialen</a> som partikeln upplever. På detta sätt har problemet reducerats till ett antal enpartikelproblem.</p>
+<p>Notera att energiegenvärdena $\varepsilon_i$ i Kohn-Shams ekvation $\eqref{eq:kohn}$ är samma som de anpassade konstanterna i ekvation $\eqref{eq:anpassade_konstanter}$. Vid lösning av Kohn-Shams ekvation erhålls dessa energiegenvärden, vardera med en tillhörande egenvektor. Egenvektorn med lägst tillhörande energi ansätts som nya elektronorbitaler $\psi_i(\vec{r})$ i nästa iteration av beräkningsalgoritmen. På detta sätt minimeras energin successivt.</p>
 
 </div>
 </div>
@@ -11846,12 +11848,12 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Kohn-Shams ekvation $\ref{eq:kohnsham}$ är ett egenvärdesproblem på formen</p>
+<p>Kohn-Shams ekvation $\eqref{eq:kohn}$ är ett egenvärdesproblem på formen</p>
 <p>\begin{equation}
     Au  = \varepsilon u
 \end{equation}</p>
 <p>där $A = \left[-\frac{1}{2}\nabla^2 + V_\text{eff}(\vec{r}) \right]$, $u = \sqrt{4\pi} r \psi$ är egenvektorerna och $\varepsilon$ är energiegenvärdena. Ekvationen kan lösas med funktionen <code>linalg.eig()</code> som ingår i Numpy.</p>
-<p>Det stora problemet är hur matrisen $A$ ställs upp. Den första termen $-\frac{1}{2}\nabla^2$ är en gradient av vågfunktionen. Eftersom problemet är diskret så måste derivatorna i varje punkt approximeras med differenskvoter</p>
+<p>Det stora problemet är hur matrisen $A$ ställs upp. Den första termen $-\frac{1}{2}\nabla^2$ är laplaceoperatorn verkande på vågfunktionen. Eftersom problemet är diskret så måste derivatorna i varje punkt approximeras med differenskvoter</p>
 <p>\begin{equation}
     u'(r_i) = \frac{u_{i+1} - u_{i-1}}{2h}
 \end{equation}</p>
@@ -11885,7 +11887,7 @@ MathJax.Hub.Config({
 \end{equation}$$</p>
 <p>där $h$ är avståndet mellan punkterna. Detta ger:</p>
 <p>$$\begin{equation}
-    -\frac{1}{2}\nabla^2 = -\frac{1}{2h^2} \frac{1}{h^2} \begin{bmatrix}
+    -\frac{1}{2}\nabla^2 = -\frac{1}{2h^2} \begin{bmatrix}
         2 &amp; -1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
         -1 &amp; 2 &amp; -1 &amp; 0 &amp; \dots &amp; 0 \\
         0 &amp; -1 &amp; 2 &amp; -1 &amp; \dots &amp; 0 \\
@@ -11911,7 +11913,7 @@ MathJax.Hub.Config({
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">rr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># step size</span>
 <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>  <span class="c1"># number of points</span>
 
-<span class="c1">## Add gradient term to A</span>
+<span class="c1">## Add laplace operator term to A</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="n">A</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="n">A</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
@@ -11975,9 +11977,18 @@ MathJax.Hub.Config({
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Den totala funktionen blir:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11988,21 +11999,29 @@ MathJax.Hub.Config({
     <span class="n">h</span> <span class="o">=</span> <span class="n">rr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># step size</span>
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>  <span class="c1"># number of points</span>
 
-    <span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="n">A</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="n">A</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="c1">## Add laplace operator term to A</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">A</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">A</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span> <span class="o">**</span> <span class="mi">2</span>
 
-    <span class="n">KS</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">A</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">Z</span> <span class="o">/</span> <span class="n">rr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-
+    <span class="c1">## Add effective potential to A</span>
+    <span class="n">A</span> <span class="o">+=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">Z</span> <span class="o">/</span> <span class="n">rr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">V_H</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">KS</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">V_H</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">A</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">V_H</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">V_xc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">KS</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">V_xc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-
+        <span class="n">A</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">V_xc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1">## Solve the eigenvalue problem</span>
     <span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">KS</span><span class="p">)</span>
+    
+    <span class="c1">## Set u equal to the eigvec with lowest corresponding eigval</span>
     <span class="n">u</span> <span class="o">=</span> <span class="n">eigvecs</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">eigvals</span><span class="p">)]</span>
+    
+    <span class="c1">## Add boundary points and normalize</span>
     <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">0</span><span class="p">],</span> <span class="n">u</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">u</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">simps</span><span class="p">(</span><span class="n">u</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rr</span><span class="p">))</span>
+    
+    <span class="c1">## Calculate wave function</span>
     <span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
         <span class="p">([</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">h</span> <span class="o">*</span> <span class="n">Z</span><span class="p">)],</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">rr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
     <span class="p">)</span>
@@ -12014,6 +12033,15 @@ MathJax.Hub.Config({
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Funktionen tar in den effektiva potentialen om skickar ut nya elektronorbitaler med tillhörande energi.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
