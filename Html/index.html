@@ -11827,7 +11827,7 @@ för elektronerna kring kärnan</p>
         \psi_1(\vec{x_N}) &amp; \psi_2(\vec{x_N}) &amp; \dots &amp; \psi_N(\vec{x_N}) \\
     \end{matrix} \right|,
 \end{equation*}$$</p>
-<p>där $\vec{x}_i$ är rums- och spinnkoordinaterna för partikel $i$ \cite[s.~53]{Thijssen2007ComputationalPhysics}. Detta motiveras i sektion \ref{sec:wave_fn_electron_orbitals}. Dessa teoretiska partiklar benämns \emph{Kohn-Sham-partiklar}, och beter sig precis som vanliga elektroner med undantaget för växelverkan sinsemellan. För att Kohn-Sham-partiklarna ska bete sig likt elektroner införs en extra term i potentialen som approximativt kompenserar avsaknaden av växelverkan.</p>
+<p>där $\vec{x}_i$ är rums- och spinnkoordinaterna för partikel $i$. Detta motiveras mer på sidan om <a href="electron-density.html">beräkning av elektrontäthet</a>. Dessa teoretiska partiklar benämns <em>Kohn-Sham-partiklar</em>, och beter sig precis som vanliga elektroner med undantaget för växelverkan sinsemellan. För att Kohn-Sham-partiklarna ska bete sig likt elektroner införs en extra term i potentialen som approximativt kompenserar avsaknaden av växelverkan.</p>
 
 </div>
 </div>
@@ -11841,8 +11841,8 @@ för elektronerna kring kärnan</p>
 <p>Att uttrycka problemet i termer av elektrontätheten $n(\vec{r})$ förenklar problemet avsevärt, eftersom antalet 
 koordinater reduceras från tre per elektron till totalt tre. Alla potentialer och energier kan uttryckas som 
 funktional av elektrontätheten, och är enligt <em>Första Hohenberg-Kohn-teoremet</em>  ekvivalent med att uttrycka
-dem i termer av vågfunktioner.\cite[s.~8]{Finocchi2011DensityApproaches}. Hur elektrontätheten beräknas
-från elektronernas vågfunktioner specificeras på sidan <a href="electron-density.html">Beräkning av elektrontäthet</a>.</p>
+dem i termer av vågfunktioner. Hur elektrontätheten beräknas
+från elektronernas vågfunktioner specificeras på sidan <a href="electron-density.html">beräkning av elektrontäthet</a>.</p>
 </li>
 </ul>
 
@@ -11866,7 +11866,7 @@ från elektronernas vågfunktioner specificeras på sidan <a href="electron-dens
 <li><p><a href="electron-density.html">I varje punkt beräknas elektrontätheten</a> $n(\vec{r})^{(0)}$.</p>
 </li>
 <li><p>Från den beräknade elektrontätheten $n(\vec{r})^{(0)}$ <a href="energibidrag.html">utvärderas den effektiva potentialen</a> $V_\text{eff}$ 
-och <a href="total-energy.html">systemets totala energi</a> $E[n]$.</p>
+och <a href="total_energy.html">systemets totala energi</a> $E[n]$.</p>
 </li>
 <li><p><a href="kohn-sham.html">Kohn-Shams ekvation</a> löses med hjälp av $V_\text{eff}$, vilket ger nya elektronorbitaler 
 $\psi_i^{(1)}$.</p>
@@ -11900,13 +11900,13 @@ den önskade noggrannheten.</p>
 <p>Notebooken innehåller följande artiklar</p>
 <ul>
 <li><a href="energibidrag.html">Teoriavsnitt om energibidrag och uppdelning av effektiva potentialen</a><ul>
-<li><a href="Extern\ potential.html">Uträkning av externt potentialbidrag</a></li>
+<li><a href="Extern-potential.html">Uträkning av externt potentialbidrag</a></li>
 <li><a href="hartreepotential.html">Uträkning av Hartreepotential</a></li>
 <li><a href="exchange-correlation.html">Uträkning av exchange correlation-bidrag med LDA</a></li>
 </ul>
 </li>
 <li><a href="kohn-sham.html">Lösning av Kohn-Shams ekvation med effektiv potential</a></li>
-<li><a href="total-energy.html">Uträkning av total energi för systemet</a></li>
+<li><a href="total_energy.html">Uträkning av total energi för systemet</a></li>
 </ul>
 <p>Denna notebook är skrivet i pedagogiskt syfte. Förhoppningen är att en läsare skall, med hjälp av denna notebook, kunna implementera DFT i sitt egna program.</p>
 
