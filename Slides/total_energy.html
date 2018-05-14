@@ -11905,7 +11905,11 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Utr&#228;kning-av-systemets-totala-energi">Utr&#228;kning av systemets totala energi<a class="anchor-link" href="#Utr&#228;kning-av-systemets-totala-energi">&#182;</a></h1><p>Efter <a href="energibidrag.html">ha undersökt respektive bidrag till energin och den effektiva potentialen</a> är det intressant att undersöka hur de samverkar vid uträkning av systemets totala energi. Systemets totala energi är:</p>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script><h1 id="Utr&#228;kning-av-systemets-totala-energi">Utr&#228;kning av systemets totala energi<a class="anchor-link" href="#Utr&#228;kning-av-systemets-totala-energi">&#182;</a></h1><p>Efter <a href="energibidrag.html">ha undersökt respektive bidrag till energin och den effektiva potentialen</a> är det intressant att undersöka hur de samverkar vid uträkning av systemets totala energi. Systemets totala energi är:</p>
 <p>$$\begin{equation}
 \label{eq:app_e_tot}
  E[n] = T[n] + V[n, V_\text{ext}] + E_\text{H}[n] +  E_\text{xc}[n].
@@ -11930,7 +11934,7 @@ $$
 \int n(\vec{r})V_\text{H}(\vec{r}) = \iint \frac{n(\vec{r'})n(\vec{r})}{|\vec{r'} - \vec{r}|} dV' dV = 2\cdot E_\text{H}[n] $$</p>
 <p>$$
 \int n(\vec{r})V_\text{xc}(\vec{r}) = \int n(\vec{r}) \varepsilon_\text{xc}^\text{HEG}(\vec{r}, n(\vec{r})) dV + \int n^2(\vec{r})\frac{d}{dn}\varepsilon_\text{xc}^\text{HEG}(\vec{r}, n(\vec{r}))dV = E_\text{xc}[n] + \int n^2(\vec{r})\frac{d}{dn}\varepsilon_\text{xc}^\text{HEG}(\vec{r}, n(\vec{r})) dV$$</p>
-<p>Tillsammans med ekvation (\ref{eq:app_T_V}) blir då ekvation (\ref{eq:app_e_tot})</p>
+<p>Tillsammans med ekvation \eqref{eq:app_T_V} blir då ekvation \eqref{eq:app_e_tot}</p>
 <p>$$\begin{align*}
 E[n] &amp;= \sum^N_{i=1}\varepsilon_i - V[n, V_\text{eff}] + V[n,V_\text{ext}] + E_\text{H}[n] + E_\text{xc}[n] \\
  &amp;= \sum^N_{i=1}\varepsilon_i - V[n, V_\text{ext}] - 2E_\text{H}[n] - E_\text{xc}[n] - \int n^2(\vec{r})\frac{d}{d n}\varepsilon_\text{xc}^\text{HEG}(\vec{r}, n(\vec{r})) dV + V[n,V_\text{ext}] + E_\text{H}[n] + E_\text{xc}[n] \\
@@ -11957,6 +11961,15 @@ E[n] &amp;= \sum^N_{i=1}\varepsilon_i - V[n, V_\text{eff}] + V[n,V_\text{ext}] +
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="index.html">Tillbaka till förstasidan</a></p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>

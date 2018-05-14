@@ -11937,7 +11937,7 @@ V_\text{H}(\vec{r}) = 2 \cdot \frac{\delta E_\text{H}[n]}{\delta n} = \int \frac
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">&#182;</a></h1><p>Uttrycket (\ref{V_H}) är lösningen till Poissons ekvation, det vill säga</p>
+<h1 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">&#182;</a></h1><p>Uttrycket \eqref{V_H} är lösningen till Poissons ekvation, det vill säga</p>
 <p>$$\begin{equation}
 \label{poisson}
 \nabla^2V_\text{H}(\vec{r}) = -4\pi n(\vec{r}).
@@ -11961,13 +11961,13 @@ $$</p>
 \label{u_replace}
 \sqrt{4 \pi n_\text{s}(r)} r = u(r) % \Rightarrow \int n_\text{s}(\vec{r}) dV = \iiint n_\text{s}(r) r^2 \sin(\theta) dr d\theta d\varphi = \int u(r) dr
 \end{equation}$$</p>
-<p>blir Poissons ekvation (\ref{poisson}) på formen</p>
+<p>blir Poissons ekvation \eqref{poisson} på formen</p>
 <p>$$\begin{equation}
 \label{problem}
 \frac{d^2}{dr^2}U(r) = -\frac{u^2(r)}{r}
 \end{equation}$$</p>
 <p>Variabelbytena innebär att $u(0) = 0$ och att $n(r_\text{max}) = 0 \Rightarrow \lim_{r\rightarrow\infty}u(r) = 0$, eftersom $n(r)$ är normerbar. Vidare är $U(0) = 0$ och $U(r_\text{max}) = 0$ \cite{comphys}.</p>
-<p>Problemet i ekvation (\ref{problem}) kan lösas som ett matrisproblem i ett diskretiserat rum. Genom liknande diskretisering som i avsnitt kan man ersätta andraderivatan med en matris.</p>
+<p>Problemet i ekvation \eqref{problem} kan lösas som ett matrisproblem i ett diskretiserat rum. Genom liknande diskretisering som i avsnitt kan man ersätta andraderivatan med en matris.</p>
 <p>$$\begin{equation*}
     \frac{d^2}{dr^2} = \frac{1}{h^2} \begin{bmatrix}
         2 &amp; -1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
@@ -12122,6 +12122,15 @@ $$</p>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="index.html">Tillbaka till förstasidan</a></p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>

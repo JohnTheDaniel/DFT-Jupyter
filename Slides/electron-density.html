@@ -11918,7 +11918,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Att uttrycka problemet i termer av elektrontätheten $n(\vec{r})$ istället får vågfunktioner förenklar problemet avsevärt, eftersom antalet koordinater reduceras från tre per elektron till totalt tre. Alla potentialer och energier kan uttryckas som funktional av elektrontätheten, och är enligt Första Hohenberg-Kohn-teoremet ekvivalent med att uttrycka dem i termer av vågfunktioner.\cite[s.~8]{Finocchi2011DensityApproaches}</p>
+<p>Att uttrycka problemet i termer av elektrontätheten $n(\vec{r})$ istället får vågfunktioner förenklar problemet avsevärt, eftersom antalet koordinater reduceras från tre per elektron till totalt tre. Alla potentialer och energier kan uttryckas som funktional av elektrontätheten, och är enligt Första Hohenberg-Kohn-teoremet ekvivalent med att uttrycka dem i termer av vågfunktioner.</p>
 
 </div>
 </div>
@@ -11938,11 +11938,11 @@ MathJax.Hub.Config({
 <p>Elektrontätheten $n(\vec{r})$ för ett system med $N$ elektroner och vågfunktion $\Psi(\vec{x_1}, \dots, \vec{x_N})$ definieras enligt</p>
 <p>$$\begin{equation}
     \label{eq:def_density}
-    n(\vec{r}) = N \int |\Psi(\vec{x_1}, \vec{x_2}, \vec{x_3}, \dots, \vec{x_N})|^2 d\sigma_1 \vec{dx_2} \vec{dx_3} \dots \vec{x_N},
+    n(\vec{r}) = N \int |\Psi(\vec{x_1}, \vec{x_2}, \vec{x_3}, \dots, \vec{x_N})|^2 d\sigma_1 \vec{dx_2} \vec{dx_3} \dots \vec{dx_N},
 \end{equation}$$.</p>
-<p>där $\vec{x_i} = (\vec{r_i}, \sigma_i)$ är rums- och spinnkoordinat för partikel $i$. \cite[s.~47]{Burke2007TheDFT}</p>
+<p>där $\vec{x_i} = (\vec{r_i}, \sigma_i)$ är rums- och spinnkoordinat för partikel $i$.</p>
 <p>Som tidigare nämnts förenklas uträkningarna genom att räkna på fiktiva, icke-interagerande Kohn-Sham-partiklar. För Kohn-Sham-partiklarna ansätts vågfunktionerna $\psi_i(\vec{x}_i)$ som är  ortogonala mot varandra.</p>
-<p>Eftersom elektroner är fermioner (partiklar med halvtaligt spinn), måste \emph{Pauliprincipen} vara uppfylld. Principen säger att två fermioner i ett kvantsystem inte kan anta samma kvanttillstånd samtidigt. Av detta följer att vågfunktionen för ett system av fermioner är anti-symmetrisk om två partiklar byter rum- och spinnkoordinat med varandra. För att uppfylla detta villkor måste $\Psi$ vara på formen</p>
+<p>Eftersom elektroner är fermioner (partiklar med halvtaligt spinn), måste <em>Pauliprincipen</em> vara uppfylld. Principen säger att två fermioner i ett kvantsystem inte kan anta samma kvanttillstånd samtidigt. Av detta följer att vågfunktionen för ett system av fermioner är anti-symmetrisk om två partiklar byter rum- och spinnkoordinat med varandra. För att uppfylla detta villkor måste $\Psi$ vara på formen</p>
 <p>$$\begin{equation}
     \Psi = \frac{1}{\sqrt{N \text{!}}} \left| \begin{array}
         \\\psi_1(\vec{x_1}) &amp; \psi_2(\vec{x_1}) &amp; \dots &amp; \psi_N(\vec{x_1}) \\
@@ -11951,7 +11951,7 @@ MathJax.Hub.Config({
         \psi_1(\vec{x_N}) &amp; \psi_2(\vec{x_N}) &amp; \dots &amp; \psi_N(\vec{x_N}) \\
     \end{array} \right|,
 \end{equation}$$</p>
-<p>vilket kallas för en Slaterdeterminant. Med hjälp av ekvation (\ref{eq:def_density}) erhålls att den samlade elektrontätheten blir</p>
+<p>vilket kallas för en Slaterdeterminant. Med hjälp av ekvation \eqref{eq:def_density}erhålls att den samlade elektrontätheten blir</p>
 <p>$$\begin{equation}
     \label{eq:density_from_orbitals}
     n(\vec{r}) = \sum^N_{i=1} |\psi_i(\vec{r}, \sigma_i)|^2,
@@ -12002,6 +12002,15 @@ MathJax.Hub.Config({
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I detta fall gäller att $\psi_1 = -\psi_2$, eftersom de två elektronerna är i samma tillstånd men med olika spinn. Detta ger att $|\psi_1|^2 = |\psi_2|^2 = |\psi|^2$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="index.html">Tillbaka till förstasidan</a></p>
 
 </div>
 </div>
