@@ -11837,8 +11837,8 @@ $$</p>
 \frac{d^2}{dr^2}U(r) = -\frac{u^2(r)}{r}
 \end{equation}$$</p>
 <p>Variabelbytena innebär att $u(0) = 0$ och att $n(r_\text{max}) = 0 \Rightarrow \lim_{r\rightarrow\infty}u(r) = 0$, eftersom $n(r)$ är normerbar. Vidare är $U(0) = 0$ och $U(r_\text{max}) = 0$ \cite{comphys}.</p>
-<p>Problemet i ekvation \ref{problem} kan lösas som ett matrisproblem i ett diskretiserat rum. Genom liknande diskretisering som i avsnitt kan man ersätta andraderivatan med en matris.</p>
-<p>$$\begin{equation}
+<p>Problemet i ekvation (\ref{problem}) kan lösas som ett matrisproblem i ett diskretiserat rum. Genom liknande diskretisering som i avsnitt kan man ersätta andraderivatan med en matris.</p>
+<p>$$\begin{equation*}
     \frac{d^2}{dr^2} = \frac{1}{h^2} \begin{bmatrix}
         2 &amp; -1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
         -1 &amp; 2 &amp; -1 &amp; 0 &amp; \dots &amp; 0 \\
@@ -11847,7 +11847,7 @@ $$</p>
         0 &amp; \dots &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\
         0 &amp; \dots &amp; 0 &amp; 0 &amp; -1 &amp; 2
         \end{bmatrix}
-\end{equation}$$</p>
+\end{equation*}$$</p>
 <p>detta görs med funktionen <code>get_gradient_matrix</code> som ligger i <code>components.gradient</code>. Implentationen blir</p>
 
 </div>
@@ -11855,7 +11855,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">components.gradient</span> <span class="k">import</span> <span class="n">get_gradient_matrix</span>
@@ -11901,7 +11901,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -11954,7 +11954,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot av Hartreepotentialen</span>

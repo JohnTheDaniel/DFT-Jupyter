@@ -11771,32 +11771,11 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Här en kommentar som säger vad som behöver göras på den här sidan för att få den att fungera och räknas som klar:</span>
-
-<span class="c1"># Referenser till källor är trasigt. John har hittat ett plugin till jupyter som kan fixa det här:</span>
-<span class="c1"># https://github.com/takluyver/cite2c</span>
-
-<span class="c1"># Just nu har vi referenser till avsnitt. Dessa kan göras om till länkar istället som hänvisar till andra sidor. </span>
-
-<span class="c1"># Eventuellt vill vi göra om den här sidan och arbeta på att anpassa detta projekt: </span>
-<span class="c1"># https://github.com/ChrisRackauckas/JupyterSite</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="En-introduktion-till-DFT">En introduktion till DFT<a class="anchor-link" href="#En-introduktion-till-DFT">&#182;</a></h1><p>DFT står för Density Functional Theory, på svenska täthetsfunktionalteori, och används för att beräkna grundtillstånd för flerelektronsystem.</p>
+<h1 id="En-introduktion-till-DFT">En introduktion till DFT<a class="anchor-link" href="#En-introduktion-till-DFT">&#182;</a></h1><h3 id="Av-Martin-Gulliksson-och-John-Daniel-Boss&#233;r">Av Martin Gulliksson och John Daniel Boss&#233;r<a class="anchor-link" href="#Av-Martin-Gulliksson-och-John-Daniel-Boss&#233;r">&#182;</a></h3><p>DFT står för Density Functional Theory, på svenska täthetsfunktionalteori, och används för att beräkna grundtillstånd för flerelektronsystem.</p>
 
 </div>
 </div>
@@ -11863,7 +11842,7 @@ för elektronerna kring kärnan</p>
 koordinater reduceras från tre per elektron till totalt tre. Alla potentialer och energier kan uttryckas som 
 funktional av elektrontätheten, och är enligt <em>Första Hohenberg-Kohn-teoremet</em>  ekvivalent med att uttrycka
 dem i termer av vågfunktioner.\cite[s.~8]{Finocchi2011DensityApproaches}. Hur elektrontätheten beräknas
-från elektronernas vågfunktioner specificeras i avsnitt \ref{sec:wave_fn_electron_orbitals}.</p>
+från elektronernas vågfunktioner specificeras på sidan <a href="electron-density.html">Beräkning av elektrontäthet</a>.</p>
 </li>
 </ul>
 
@@ -11884,13 +11863,13 @@ från elektronernas vågfunktioner specificeras i avsnitt \ref{sec:wave_fn_elect
 <ol>
 <li><p>Systemet diskretiseras i rummet och en inledande gissning av vågfunktionerna $\psi_i^{(0)}$ ställs upp.</p>
 </li>
-<li><p>I varje punkt beräknas elektrontätheten $n(\vec{r})^{(0)}$ (avsnitt \ref{sec:wave_fn_electron_orbitals})</p>
+<li><p><a href="electron-density.html">I varje punkt beräknas elektrontätheten</a> $n(\vec{r})^{(0)}$.</p>
 </li>
-<li><p>Från den beräknade elektrontätheten $n(\vec{r})^{(0)}$ utvärderas den effektiva potentialen $V_\text{eff}$ 
-och systemets totala energi $E[n]$ (avsnitt \ref{sec:teori:potential}).</p>
+<li><p>Från den beräknade elektrontätheten $n(\vec{r})^{(0)}$ <a href="energibidrag.html">utvärderas den effektiva potentialen</a> $V_\text{eff}$ 
+och <a href="total-energy.html">systemets totala energi</a> $E[n]$.</p>
 </li>
-<li><p>Kohn-Shams ekvation (\ref{eq:kohn}) löses med hjälp av $V_\text{eff}$, vilket ger nya elektronorbitaler 
-$\psi_i^{(1)}$ (avsnitt \ref{sec:teori:kohn}).</p>
+<li><p><a href="kohn-sham.html">Kohn-Shams ekvation</a> löses med hjälp av $V_\text{eff}$, vilket ger nya elektronorbitaler 
+$\psi_i^{(1)}$.</p>
 </li>
 <li><p>De nya elektronorbitalerna används i steg 2 för att hitta $n(\vec{r})^{(1)}$ och den tillhörande 
 energin $E[n]$, och processen upprepas.</p>
@@ -11918,7 +11897,240 @@ den önskade noggrannheten.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Hur hade det varit om vi presenterade länkar här till olika delsteg? Typ en sida som presenterar hur veff beräknas, en sida som presenterar total energi, en sida som visar hur slutliga implementationen fungerar.</p>
+<p>Notebooken innehåller följande artiklar</p>
+<ul>
+<li><a href="energibidrag.html">Teoriavsnitt om energibidrag och uppdelning av effektiva potentialen</a><ul>
+<li><a href="Extern\ potential.html">Uträkning av externt potentialbidrag</a></li>
+<li><a href="hartreepotential.html">Uträkning av Hartreepotential</a></li>
+<li><a href="exchange-correlation.html">Uträkning av exchange correlation-bidrag med LDA</a></li>
+</ul>
+</li>
+<li><a href="kohn-sham.html">Lösning av Kohn-Shams ekvation med effektiv potential</a></li>
+<li><a href="total-energy.html">Uträkning av total energi för systemet</a></li>
+</ul>
+<p>Denna notebook är skrivet i pedagogiskt syfte. Förhoppningen är att en läsare skall, med hjälp av denna notebook, kunna implementera DFT i sitt egna program.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Efter att ha gjort en implementation i Python har följande main-loop konstruerats.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline 
+
+<span class="c1">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">#</span>
+<span class="c1">#  heliumdft.py</span>
+<span class="c1">#</span>
+<span class="c1">#  Copyright 2018 Martin Gulliksson &lt;martin@martingulliksson.com&gt;</span>
+<span class="c1">#             and John Daniel Bossér &lt;john.daniel@bosser.com&gt;</span>
+<span class="c1">#</span>
+<span class="c1">#  This program is free software; you can redistribute it and/or modify</span>
+<span class="c1">#  it under the terms of the GNU General Public License as published by</span>
+<span class="c1">#  the Free Software Foundation; either version 2 of the License, or</span>
+<span class="c1">#  (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1">#  This program is distributed in the hope that it will be useful,</span>
+<span class="c1">#  but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1">#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1">#  GNU General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1">#  You should have received a copy of the GNU General Public License</span>
+<span class="c1">#  along with this program; if not, write to the Free Software</span>
+<span class="c1">#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span>
+<span class="c1">#  MA 02110-1301, USA.</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">components.misc</span> <span class="k">import</span> <span class="n">get_n</span>
+<span class="kn">from</span> <span class="nn">components.hartree</span> <span class="k">import</span> <span class="n">get_hartree_potential</span>
+<span class="kn">from</span> <span class="nn">components.xc</span> <span class="k">import</span> <span class="n">get_V_x</span><span class="p">,</span> <span class="n">get_V_xc</span><span class="p">,</span> <span class="n">get_V_xc_Vosko</span>
+<span class="kn">from</span> <span class="nn">components.kohnsham</span> <span class="k">import</span> <span class="n">solve_ks</span>
+
+<span class="n">max_iterations</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="c1">## 1. Sample space in radius from nucleus.</span>
+<span class="n">r_max</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">r_step</span> <span class="o">=</span> <span class="mf">0.015</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r_max</span><span class="p">,</span> <span class="n">r_step</span><span class="p">)</span>
+
+<span class="c1">## 1. Make an initial guess for the wave function. </span>
+<span class="n">psi</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">)</span>
+      
+<span class="n">Z</span> <span class="o">=</span> <span class="mi">2</span>                   <span class="c1"># Number of protons in nucleus</span>
+<span class="n">E_vec</span> <span class="o">=</span> <span class="p">[]</span>              <span class="c1"># Calculated energies in each iteration</span>
+
+<span class="c1">## Conditions for exiting the program</span>
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mf">1e-7</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculating helium ground state...&quot;</span><span class="p">)</span> 
+
+<span class="c1"># Loop/run the program until conditions are met. </span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">E_vec</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">E_vec</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_vec</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">tolerance</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">E_vec</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_iterations</span><span class="p">):</span>
+    <span class="c1"># 2. Get the density in every point in space</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">get_n</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+    
+    <span class="c1"># 3. Get potential terms</span>
+    <span class="n">V_sH</span> <span class="o">=</span> <span class="n">get_hartree_potential</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">V_H</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">V_sH</span>
+    <span class="n">V_xc</span> <span class="o">=</span> <span class="n">get_V_xc_Vosko</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># 4 and 5. Solve Kohn-Sham and get total energy. </span>
+    <span class="n">E</span><span class="p">,</span> <span class="n">psi</span> <span class="o">=</span> <span class="n">solve_ks</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">V_H</span><span class="p">,</span> <span class="n">V_xc</span><span class="p">)</span>
+    
+    <span class="c1"># Add calculated energy to list</span>
+    <span class="n">E_vec</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ground state energy =&quot;</span><span class="p">,</span> <span class="n">E_vec</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1">## Calculate electron densities</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">get_n</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+
+<span class="c1">## Plot electron densities</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Distance from nucleus, $r$ [$a_0$]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Electron density $n$, [$a_0^{-3}$]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">## Plot the calculated energies for every iteration in Hartree-Fock loop. </span>
+<span class="c1">## Does it converge? ;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Iteration number&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energy [Ha]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">E_vec</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">E_vec</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Calculating helium ground state...
+Ground state energy = -2.75246590242
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Programmet möjliggjorde undersökning av heliums grundtillståndsenergi uträknat med respektive utan LDA. I tabellen nedan presenteras beräknad totala energi för några iterationssteg för de två implementationerna</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>Iterationsnummer</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>...</th>
+<th>7</th>
+<th>...</th>
+<th>13</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Med LDA [Ha]</td>
+<td>-3,40</td>
+<td>-2,52</td>
+<td>-2,87</td>
+<td>...</td>
+<td>-2.75</td>
+<td>...</td>
+<td>-2.75</td>
+</tr>
+<tr>
+<td>Utan LDA [Ha]</td>
+<td>-3.18</td>
+<td>-2,78</td>
+<td>-2,88</td>
+<td>...</td>
+<td>-2,86</td>
+<td>...</td>
+<td>-2,86</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Exmperimentellt har man visat att heliums grundtillståndsenergi är -2,9 Ha. Från tabellen framgår det att LDA är en dålig uppskattning av exchange correlation-bidragen till heliums grundtillståndsenergi. Detta beror troligtvis på att elektronmolnet i helium inte kan approximeras som en homogen elektrongas. Vidare ger LDA upphov till <strong>självinteraktionsfel</strong>, vilket innebär att elektronerna uppskattas interagera med sig själva. Självinteraktionen beror på att LDA enbart tar hänsyn till elektrontätheten $n$. Exempelvis erhålles nollskillda  $n$ och $E_\text{xc}$ i enelektronsystem med LDA.</p>
+<p>LDA användes för den enkla implementationen eftersom metoden är förhållandevis simpel att förklara och tillämpa. Bristerna hos LDA är kända och resultaten som erhölls är därför inte förvånande.</p>
 
 </div>
 </div>

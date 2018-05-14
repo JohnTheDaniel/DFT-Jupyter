@@ -4,7 +4,7 @@
 #  tests.py
 #
 #  Copyright 2018 Martin Gulliksson <martin@martingulliksson.com>
-#             and John Daniel Bossér <john.daniel@bosser.com> 
+#             and John Daniel Bossér <john.daniel@bosser.com>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -116,6 +116,7 @@ def test_helium_xc_Vosko(rr, psi, tol, max_iter, verbose):
     iteration_number = 0
     E = 0
     E_prev = E + 1
+    E_vec = []
     T0 = time.clock()
     while abs(E - E_prev) > tol and iteration_number < max_iter:
         iteration_number += 1
@@ -127,9 +128,10 @@ def test_helium_xc_Vosko(rr, psi, tol, max_iter, verbose):
         V_xc = get_V_xc_Vosko(n)
         E_prev = E
         E, psi = solve_ks(rr, Z, V_H, V_xc)
+        E_vec.append(E)
         if verbose:
             print("E =", E, "[Ha]")
             print("ΔE =", E - E_prev, "[Ha]")
             print("Time =", time.clock() - T0, "s")
             print()
-    return psi, E
+    return psi, E, E_vec

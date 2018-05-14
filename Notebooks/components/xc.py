@@ -43,14 +43,8 @@ Y0 = y0 ** 2 + b * y0 + c
 
 def get_V_xc_Vosko(n):
     V_x = get_eps_x(n) + get_Deps_x_times_n(n)
-    beta = np.cbrt(3 * np.pi ** 2 * n) / c
-    mu = np.sqrt(1 + beta ** 2)
-    S = 3 * np.log(beta + mu) / (2 * beta * mu) - 1 / 2
-    get_nans = np.isnan(S)
-    S[get_nans] = 0
-    V_x_RLDA = V_x * S
     V_c = get_eps_c_Vosko(n) + n * get_Deps_c_Vosko(n)
-    V_xc = V_x_RLDA + V_c
+    V_xc = V_x + V_c
     return V_xc
 
 
